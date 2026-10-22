@@ -1,10 +1,18 @@
 {
-  "name":"Menú Misional - Barrio Leon Creek",
-  "short_name":"Menú Misional",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#f7f4ed",
-  "theme_color":"#163a5f",
-  "lang":"es",
-  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+  "name": "Menú para Compartir el Evangelio - Barrio Leon Creek",
+  "short_name": "Menú Evangelio",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ed",
+  "theme_color": "#163a5f",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "description": "Ideas sencillas para amar, compartir e invitar en el Barrio Leon Creek."
 }

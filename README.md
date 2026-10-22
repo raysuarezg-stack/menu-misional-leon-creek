@@ -1,49 +1,46 @@
-# Menú Misional — Barrio Leon Creek
+# Menú para Compartir el Evangelio — Barrio Leon Creek
 
-Sitio web móvil e interactivo para ayudar a los miembros a escoger acciones concretas para apoyar la obra misional.
+Sitio web móvil e interactivo para ayudar a los miembros del Barrio Leon Creek, de La Iglesia de Jesucristo de los Santos de los Últimos Días, a escoger acciones concretas para compartir el Evangelio.
 
-## Funciones
+## Cambios incorporados en esta versión
 
-- Explorar por grupo: Niños, Jóvenes, Mujeres, Hombres, Familias.
-- Explorar por actividad: Orar, Amar y Servir, Compartir, Invitar, Iglesia, Misioneros, Referencias, Investigadores, Nuevos Miembros, Miembros que Regresan, Templo e Historia Familiar, Sacerdocio.
-- Dentro de cada actividad, filtrar otra vez por Niños, Jóvenes, Mujeres, Hombres o Familias.
-- Actividades ordenadas de Fácil → Intermedio → Más participación.
+- Lenguaje actualizado para seguir de forma más cercana la terminología oficial de la Iglesia.
+- “Buscar por persona” cambiado a **“Buscar por edades”**.
+- Sección ampliada de **Nuestro Plan Misional**, con la declaración de misión, metas, plan de acción e implementación.
+- Énfasis en **Amar, Compartir e Invitar**.
+- Uso de términos como **recogimiento de Israel**, **miembros nuevos**, **miembros que regresan a la actividad** y **personas a quienes los misioneros están enseñando**.
+
+## Funciones del sitio
+
+- Explorar por edades: Niños, Jóvenes, Mujeres, Hombres y Familias.
+- Explorar por tipo de actividad.
+- Filtrar resultados por dificultad: Fácil, Intermedio y Más participación.
+- Buscar por texto.
 - Botón “Dame una idea para hoy”.
 - Botón “Tengo 5 minutos”.
-- “Mi semana”: guarda localmente en el teléfono las actividades elegidas.
-- Compartir la lista semanal usando la función de compartir del teléfono.
-- Responsive y sin dependencias externas.
-- Progressive Web App: después de la primera visita puede conservar recursos básicos para uso sin conexión.
-- No recopila nombres, correos ni información personal.
+- Sección “Mi semana”, que guarda localmente las actividades seleccionadas.
+- Compartir la lista semanal desde el teléfono.
+- Progressive Web App básica para conservar recursos del sitio después de la primera visita.
 
-## Publicar gratis con GitHub Pages
+## Archivos incluidos
 
-1. Crea un repositorio **público** llamado `menu-misional-leon-creek`.
-2. Sube todos los archivos de este paquete a la raíz del repositorio.
-3. En GitHub abre **Settings → Pages**.
-4. En **Build and deployment → Source**, escoge **Deploy from a branch**.
-5. Selecciona la rama **main** y la carpeta **/(root)**.
-6. Pulsa **Save**.
-7. El sitio quedará en:
+- `index.html`
+- `styles.css`
+- `app.js`
+- `manifest.json`
+- `sw.js`
+- `icon.svg`
+- `404.html`
+- `.nojekyll`
 
-   `https://raysuarezg-stack.github.io/menu-misional-leon-creek/`
+## Publicación en GitHub Pages
 
-## Actualizar el contenido
+1. Suba todos los archivos a la raíz del repositorio.
+2. En GitHub, abra **Settings → Pages**.
+3. En **Build and deployment**, seleccione **Deploy from a branch**.
+4. Seleccione la rama **main** y la carpeta **/(root)**.
+5. Guarde los cambios.
 
-Las actividades están en `app.js`, dentro de `const TASKS = [...]`.
+## Nota
 
-Cada actividad sigue este formato:
-
-```js
-T('Texto de la actividad', ['jovenes','mujeres'], 'invitar', 2, 10)
-```
-
-- Primer campo: texto.
-- Segundo: grupos a los que aplica.
-- Tercero: categoría.
-- Cuarto: dificultad `1`, `2` o `3`.
-- Quinto: minutos aproximados.
-
-## Privacidad
-
-La selección “Mi semana” se guarda únicamente en `localStorage` del navegador del visitante. No hay base de datos ni cuentas.
+Esta versión final está preparada como un reemplazo completo de los archivos anteriores. Incluye terminología revisada, mejoras de accesibilidad, diseño móvil y una sección ampliada del plan misional del barrio.
