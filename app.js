@@ -1,0 +1,158 @@
+const G=[['ninos','Niños','👧'],['jovenes','Jóvenes','🧑'],['mujeres','Mujeres','👩'],['hombres','Hombres','👨'],['familias','Familias','👨‍👩‍👧‍👦']];
+const C=[['orar','Orar y reconocer oportunidades','🙏'],['amar','Amar y servir','❤️'],['compartir','Compartir','💬'],['invitar','Invitar','📩'],['iglesia','Acompañar a la Iglesia','⛪'],['misioneros','Apoyar a los misioneros','👔'],['referencias','Referencias','🤝'],['investigadores','Fortalecer a investigadores','🌱'],['nuevos','Nuevos miembros','🫂'],['regresar','Miembros que regresan','🏠'],['templo','Templo e historia familiar','🛕'],['sacerdocio','Apoyo de sacerdocio','📖']];
+const rows=[
+'Orar diariamente por la obra misional.|ninos,jovenes,mujeres,hombres,familias|orar|1|2',
+'Orar por una persona específica por nombre.|ninos,jovenes,mujeres,hombres,familias|orar|1|2',
+'Preguntar en oración: “Padre Celestial, ¿a quién puedo ayudar hoy?”|jovenes,mujeres,hombres,familias|orar|1|2',
+'Participar en familia en la oración de las 7:33 p. m. por oportunidades misionales.|ninos,jovenes,mujeres,hombres,familias|orar|1|5',
+'Mantener una lista de personas por quienes estamos orando.|jovenes,mujeres,hombres,familias|orar|1|5',
+'Orar por los misioneros de tiempo completo.|ninos,jovenes,mujeres,hombres,familias|orar|1|2',
+'Preguntar a los misioneros quién necesita oración o amistad.|jovenes,mujeres,hombres|orar|2|5',
+'Pensar cada domingo en alguien que normalmente viene y no vimos.|jovenes,mujeres,hombres,familias|orar|2|5',
+'Revisar regularmente las metas del Plan Misional del Barrio.|jovenes,mujeres,hombres,familias|orar|2|10',
+'Sonreír y decir hola a alguien nuevo.|ninos,jovenes,mujeres,hombres|amar|1|2',
+'Aprender el nombre de un visitante.|ninos,jovenes,mujeres,hombres|amar|1|3',
+'Sentarse junto a alguien que esté solo.|ninos,jovenes,mujeres,hombres|amar|1|5',
+'Incluir a alguien nuevo en un juego o grupo de amigos.|ninos,jovenes|amar|1|5',
+'Mandar un mensaje: “Pensé en ti. ¿Cómo estás?”|jovenes,mujeres,hombres|amar|1|3',
+'Preguntar a un vecino: “¿Hay algo en lo que te pueda ayudar?”|jovenes,mujeres,hombres,familias|amar|1|5',
+'Ayudar a un visitante a encontrar su clase.|ninos,jovenes,mujeres,hombres|amar|1|5',
+'Hacer una tarjeta o dibujo para alguien enfermo o solo.|ninos,jovenes|amar|1|10',
+'Llevar comida a alguien enfermo o pasando una dificultad.|mujeres,hombres,familias|amar|2|30',
+'Ofrecer transporte a la Iglesia o a una actividad.|jovenes,mujeres,hombres,familias|amar|2|15',
+'Dar la bienvenida a una familia recién llegada al vecindario.|mujeres,hombres,familias|amar|2|20',
+'Visitar a un miembro en su hogar como parte de la ministración.|mujeres,hombres,familias|amar|2|30',
+'Visitar a alguien que no ha estado asistiendo.|jovenes,mujeres,hombres,familias|amar|2|30',
+'Invitar a alguien a comer o convivir para fortalecer la amistad.|mujeres,hombres,familias|amar|2|60',
+'Ayudar a un vecino con jardín, reparación, mudanza u otra necesidad práctica.|jovenes,mujeres,hombres,familias|amar|2|45',
+'Escuchar a alguien con interés sin tratar inmediatamente de corregir o enseñar.|jovenes,mujeres,hombres|amar|2|20',
+'Mantener amistad sincera aunque la persona no tenga interés en la Iglesia.|jovenes,mujeres,hombres,familias|amar|3|30',
+'Compartir algo bueno que aprendimos en la Iglesia el domingo.|ninos,jovenes,mujeres,hombres,familias|compartir|1|5',
+'Compartir una escritura que nos ayudó durante la semana.|ninos,jovenes,mujeres,hombres,familias|compartir|1|5',
+'Compartir algo aprendido en Ven, Sígueme o seminario.|ninos,jovenes,mujeres,hombres,familias|compartir|1|5',
+'Compartir una experiencia sencilla de oración.|jovenes,mujeres,hombres,familias|compartir|1|5',
+'Compartir una experiencia de servicio.|ninos,jovenes,mujeres,hombres,familias|compartir|1|5',
+'Contar a un amigo algo relacionado con nuestro llamamiento.|jovenes,mujeres,hombres|compartir|1|5',
+'Compartir algo edificante en redes sociales después de la Iglesia.|jovenes,mujeres,hombres|compartir|1|5',
+'Compartir una foto o experiencia de una actividad de servicio.|jovenes,mujeres,hombres,familias|compartir|1|5',
+'Tener listo un discurso favorito de la Conferencia General para compartir.|jovenes,mujeres,hombres,familias|compartir|2|10',
+'Tener lista una cita favorita de un profeta.|jovenes,mujeres,hombres|compartir|2|10',
+'Compartir una experiencia del templo y por qué el templo es importante.|jovenes,mujeres,hombres,familias|compartir|2|10',
+'Preparar un testimonio de un minuto.|jovenes,mujeres,hombres|compartir|2|15',
+'Preparar una respuesta sencilla a “¿Por qué vas a la Iglesia?”|jovenes,mujeres,hombres|compartir|2|10',
+'Preparar una respuesta sencilla a “¿Qué significa Jesucristo para ti?”|jovenes,mujeres,hombres|compartir|2|10',
+'Si eres converso, preparar brevemente tu historia de conversión.|jovenes,mujeres,hombres|compartir|2|15',
+'Si serviste una misión, tener una o dos experiencias listas para compartir.|mujeres,hombres|compartir|2|15',
+'Practicar en familia cómo explicar nuestras creencias con palabras sencillas.|familias|compartir|2|20',
+'Invitar a un amigo a una actividad del barrio.|ninos,jovenes,mujeres,hombres,familias|invitar|1|5',
+'Invitar a un amigo a la presentación de la Primaria.|ninos,jovenes,mujeres,hombres,familias|invitar|1|5',
+'Invitar a alguien a un servicio bautismal.|ninos,jovenes,mujeres,hombres,familias|invitar|1|5',
+'Invitar a alguien a una noche deportiva.|jovenes,mujeres,hombres,familias|invitar|1|5',
+'Invitar a alguien a un proyecto de servicio.|ninos,jovenes,mujeres,hombres,familias|invitar|1|5',
+'Invitar a alguien a una actividad de Navidad o Pascua.|ninos,jovenes,mujeres,hombres,familias|invitar|1|5',
+'Invitar a un amigo a ver la Conferencia General.|jovenes,mujeres,hombres,familias|invitar|1|5',
+'Invitar a alguien a una noche de hogar.|ninos,jovenes,mujeres,hombres,familias|invitar|2|10',
+'Invitar a una familia a cenar en nuestra casa.|familias,mujeres,hombres|invitar|2|15',
+'Invitar a una persona que no asiste regularmente a una actividad social.|jovenes,mujeres,hombres,familias|invitar|2|10',
+'Invitar a alguien a visitar los jardines del templo.|jovenes,mujeres,hombres,familias|invitar|2|10',
+'Invitar a alguien a una actividad de historia familiar.|jovenes,mujeres,hombres,familias|invitar|2|10',
+'Invitar a un amigo a seminario, FSY o una actividad de jóvenes.|jovenes|invitar|2|5',
+'Invitar personalmente a alguien a la reunión sacramental.|jovenes,mujeres,hombres,familias|iglesia|2|5',
+'Mandarle la hora y la dirección y ofrecer transporte.|jovenes,mujeres,hombres,familias|iglesia|2|10',
+'Esperarlo en la entrada y sentarse con él o ella.|jovenes,mujeres,hombres,familias|iglesia|2|15',
+'Explicarle brevemente qué sucederá durante la reunión.|jovenes,mujeres,hombres,familias|iglesia|2|10',
+'Presentarlo al obispo y a otros miembros.|mujeres,hombres,familias|iglesia|2|10',
+'Presentar a sus hijos a líderes de Primaria o jóvenes.|mujeres,hombres,familias|iglesia|2|10',
+'Acompañarlo a la segunda hora.|jovenes,mujeres,hombres,familias|iglesia|2|60',
+'Invitarlo a comer después de la Iglesia.|mujeres,hombres,familias|iglesia|3|60',
+'Mandar un mensaje después: “Nos dio mucho gusto que vinieras.”|jovenes,mujeres,hombres,familias|iglesia|1|3',
+'Volver a invitarlo sin presión.|jovenes,mujeres,hombres,familias|iglesia|2|5',
+'Preguntar a los misioneros: “¿Cómo puedo ayudar esta semana?”|jovenes,mujeres,hombres|misioneros|1|3',
+'Acompañar a los misioneros en una lección.|jovenes,mujeres,hombres|misioneros|3|45',
+'Facilitar una cita de enseñanza con un miembro.|mujeres,hombres|misioneros|3|30',
+'Permitir que una lección se enseñe en nuestro hogar.|mujeres,hombres,familias|misioneros|3|60',
+'Invitar a un amigo a cenar cuando vengan los misioneros.|mujeres,hombres,familias|misioneros|3|60',
+'Compartir nuestro testimonio durante una lección.|jovenes,mujeres,hombres|misioneros|3|10',
+'Ayudar a un investigador con transporte.|jovenes,mujeres,hombres,familias|misioneros|2|20',
+'Ayudar a organizar o participar en una fogonera misional.|jovenes,mujeres,hombres,familias|misioneros|3|60',
+'Participar en una noche de preguntas y respuestas con los misioneros.|jovenes,mujeres,hombres|misioneros|3|60',
+'Pensar en una persona específica que podría estar preparada.|jovenes,mujeres,hombres,familias|referencias|1|5',
+'Orar por esa persona durante varios días.|jovenes,mujeres,hombres,familias|referencias|1|5',
+'Buscar una oportunidad natural para conversar e invitarla.|jovenes,mujeres,hombres|referencias|2|15',
+'Preguntar si le gustaría conocer a los misioneros.|jovenes,mujeres,hombres|referencias|3|5',
+'Presentarla personalmente a los misioneros.|jovenes,mujeres,hombres,familias|referencias|3|20',
+'Con permiso, compartir su información de contacto.|jovenes,mujeres,hombres|referencias|3|5',
+'Acompañarla a su primera lección.|jovenes,mujeres,hombres|referencias|3|45',
+'Dar seguimiento y seguir involucrado después de la referencia.|jovenes,mujeres,hombres,familias|referencias|3|15',
+'Si vive fuera del barrio, ayudar a conectarla con los misioneros correspondientes.|mujeres,hombres|referencias|3|15',
+'Orar por un investigador por nombre.|ninos,jovenes,mujeres,hombres,familias|investigadores|1|2',
+'Sentarse con un investigador en la reunión sacramental.|jovenes,mujeres,hombres,familias|investigadores|2|60',
+'Invitarlo regularmente a actividades.|jovenes,mujeres,hombres,familias|investigadores|2|5',
+'Presentarlo a diferentes familias del barrio.|mujeres,hombres,familias|investigadores|2|15',
+'Ayudarle a desarrollar amistades que no dependan solamente de los misioneros.|jovenes,mujeres,hombres,familias|investigadores|3|30',
+'Asistir con él o ella a varias lecciones.|jovenes,mujeres,hombres|investigadores|3|45',
+'Acompañarlo durante su progreso hacia el bautismo.|jovenes,mujeres,hombres,familias|investigadores|3|60',
+'Asistir a su servicio bautismal y felicitarlo personalmente.|ninos,jovenes,mujeres,hombres,familias|investigadores|2|60',
+'Continuar siendo su amigo cuando los misioneros sean transferidos.|jovenes,mujeres,hombres,familias|investigadores|3|30',
+'Sentarse con un nuevo miembro durante sus primeras semanas.|jovenes,mujeres,hombres,familias|nuevos|1|60',
+'Invitar a un nuevo miembro al hogar.|mujeres,hombres,familias|nuevos|2|60',
+'Presentarlo a varias familias del barrio.|mujeres,hombres,familias|nuevos|2|20',
+'Explicarle términos de la Iglesia que todavía no comprenda.|jovenes,mujeres,hombres|nuevos|2|15',
+'Ayudarle a usar Biblioteca del Evangelio y Herramientas para Miembros.|jovenes,mujeres,hombres|nuevos|2|20',
+'Participar en las lecciones posteriores al bautismo.|jovenes,mujeres,hombres|nuevos|3|45',
+'Invitarlo a ministrar con nosotros.|mujeres,hombres|nuevos|3|45',
+'Ayudarle a comprender su llamamiento u oportunidad de servir.|mujeres,hombres|nuevos|3|20',
+'Ayudar a que tenga hermanos o hermanas ministrantes y amistades reales.|mujeres,hombres,familias|nuevos|3|20',
+'Continuar apoyándolo después de tres, seis y doce meses.|jovenes,mujeres,hombres,familias|nuevos|3|20',
+'Pensar en alguien que no hemos visto recientemente.|jovenes,mujeres,hombres,familias|regresar|1|5',
+'Mandarle un mensaje o llamarlo.|jovenes,mujeres,hombres|regresar|1|5',
+'Invitarlo primero a una actividad social.|jovenes,mujeres,hombres,familias|regresar|2|5',
+'Visitarlo y ofrecer ayuda práctica.|mujeres,hombres,familias|regresar|2|30',
+'Invitar a sus hijos a Primaria o actividades de jóvenes.|mujeres,hombres,familias|regresar|2|10',
+'Escuchar por qué se alejó sin juzgar ni discutir.|jovenes,mujeres,hombres|regresar|3|30',
+'Preguntar: “¿Qué podemos hacer para que te sea más fácil regresar?”|mujeres,hombres|regresar|3|10',
+'Ofrecer transporte y sentarse con él cuando regrese.|jovenes,mujeres,hombres,familias|regresar|3|60',
+'Continuar la amistad aunque todavía no esté listo para volver.|jovenes,mujeres,hombres,familias|regresar|3|20',
+'Compartir por qué el templo es importante para nosotros.|jovenes,mujeres,hombres,familias|templo|1|10',
+'Visitar los jardines del templo con un nuevo miembro.|jovenes,mujeres,hombres,familias|templo|2|60',
+'Ayudar a crear una cuenta de FamilySearch.|jovenes,mujeres,hombres,familias|templo|2|20',
+'Ayudar a comenzar el árbol familiar.|jovenes,mujeres,hombres,familias|templo|2|30',
+'Ayudar a encontrar nombres de familiares fallecidos.|jovenes,mujeres,hombres,familias|templo|3|45',
+'Conectarlo con consultores de templo e historia familiar.|mujeres,hombres,familias|templo|2|10',
+'Acompañarlo al templo para bautismos y confirmaciones vicarias.|jovenes,mujeres,hombres,familias|templo|3|120',
+'Ayudarle a llevar nombres de su propia familia al templo.|jovenes,mujeres,hombres,familias|templo|3|45',
+'Apoyarlo mientras se prepara para la investidura.|mujeres,hombres,familias|templo|3|60',
+'Acompañarlo nuevamente al templo para ordenanzas por familiares fallecidos.|mujeres,hombres,familias|templo|3|120',
+'Sentarse con un nuevo hermano en el cuórum de élderes.|hombres|sacerdocio|1|60',
+'Ayudarle a comprender la ministración y salir a ministrar juntos.|hombres|sacerdocio|2|45',
+'Explicarle las responsabilidades del Sacerdocio Aarónico cuando corresponda.|hombres|sacerdocio|2|20',
+'Ayudarle a aprender cómo preparar, pasar o bendecir la Santa Cena cuando corresponda.|hombres|sacerdocio|3|30',
+'Acompañarlo en sus primeras experiencias de servicio del sacerdocio.|hombres|sacerdocio|3|45',
+'Ayudarle a prepararse para el Sacerdocio de Melquisedec cuando corresponda.|hombres|sacerdocio|3|45',
+'Acompañarlo en su preparación para el templo y la investidura.|hombres|sacerdocio|3|60'
+];
+const TASKS=rows.map((r,i)=>{const [title,groups,category,difficulty,minutes]=r.split('|');return{id:'t'+(i+1),title,groups:groups.split(','),category,difficulty:+difficulty,minutes:+minutes}});
+const $=id=>document.getElementById(id), chooser=$('chooser'),results=$('results'),filterBar=$('filterBar'),groupFilter=$('groupFilter'),searchInput=$('searchInput'),exploreTitle=$('exploreTitle');
+const state={view:'home',mode:'groups',group:null,category:null,secondaryGroup:'all',difficulty:'all',search:'',selected:new Set(JSON.parse(localStorage.getItem('menuSelected')||'[]')),currentIdea:null};
+const gl=id=>(G.find(x=>x[0]===id)||[])[1]||id, cl=id=>(C.find(x=>x[0]===id)||[])[1]||id, dl=d=>d===1?'Fácil':d===2?'Intermedio':'Más participación', ml=m=>m<=5?'5 min o menos':m<60?m+' min':Math.round(m/60)+' h';
+function save(){localStorage.setItem('menuSelected',JSON.stringify([...state.selected]));$('weekCount').textContent=state.selected.size}
+function setView(v){state.view=v;document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));$(v+'View').classList.add('active');document.querySelectorAll('.nav-item').forEach(x=>x.classList.toggle('active',x.dataset.view===v));if(v==='week')week();window.scrollTo({top:0,behavior:'smooth'})}
+function showChooser(mode){setView('explore');state.mode=mode;state.group=state.category=null;state.secondaryGroup='all';state.difficulty='all';state.search='';filterBar.classList.add('hidden');results.innerHTML='';searchInput.value='';groupFilter.classList.add('hidden');document.querySelectorAll('.chip,.group-chip').forEach(x=>x.classList.toggle('active',x.dataset.difficulty==='all'||x.dataset.groupFilter==='all'));const items=mode==='groups'?G:C;exploreTitle.textContent=mode==='groups'?'¿Quién eres?':'¿Qué quieres hacer?';chooser.innerHTML='<div class="choice-grid">'+items.map(i=>'<button class="choice-card" data-choice="'+i[0]+'"><span>'+i[2]+'</span><strong>'+i[1]+'</strong><small>'+((mode==='groups')?'Explora ideas ordenadas de fácil a más comprometido':'Filtra después por grupo y dificultad')+'</small></button>').join('')+'</div>';chooser.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>choose(mode,b.dataset.choice))}
+function choose(mode,id){state.mode=mode;if(mode==='groups')state.group=id;else state.category=id;const item=(mode==='groups'?G:C).find(x=>x[0]===id);exploreTitle.textContent=item[1];chooser.innerHTML='';filterBar.classList.remove('hidden');groupFilter.classList.toggle('hidden',mode!=='categories');render()}
+function filtered(){return TASKS.filter(t=>(state.mode!=='groups'||!state.group||t.groups.includes(state.group))&&(state.mode!=='categories'||!state.category||t.category===state.category)&&(state.mode!=='categories'||state.secondaryGroup==='all'||t.groups.includes(state.secondaryGroup))&&(state.difficulty==='all'||t.difficulty===+state.difficulty)&&(!state.search||t.title.toLowerCase().includes(state.search.toLowerCase()))).sort((a,b)=>a.difficulty-b.difficulty||a.minutes-b.minutes||a.title.localeCompare(b.title,'es'))}
+function card(t){const s=state.selected.has(t.id),other=state.mode==='groups'?cl(t.category):t.groups.map(gl).join(' · ');return '<article class="task-card '+(s?'selected':'')+'"><div><div class="task-title">'+t.title+'</div><div class="task-meta"><span class="badge diff'+t.difficulty+'">'+dl(t.difficulty)+'</span><span class="badge">'+ml(t.minutes)+'</span><span class="badge">'+other+'</span></div></div><button class="task-action" data-add="'+t.id+'">'+(s?'✓ Elegido':'Elegir')+'</button></article>'}
+function render(){const ts=filtered();if(!ts.length){results.innerHTML='<div class="empty">No encontré actividades con esos filtros.</div>';return}results.innerHTML=[1,2,3].map(d=>{const a=ts.filter(t=>t.difficulty===d);return a.length?'<section><div class="results-heading"><h3>'+dl(d)+'</h3><span>'+a.length+' ideas</span></div><div class="task-list">'+a.map(card).join('')+'</div></section>':''}).join('');bind(results)}
+function bind(root){root.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>toggle(b.dataset.add))}
+function toggle(id){state.selected.has(id)?state.selected.delete(id):state.selected.add(id);save();state.view==='week'?week():render()}
+function week(){const ts=TASKS.filter(t=>state.selected.has(t.id)).sort((a,b)=>a.difficulty-b.difficulty);$('weekSummary').innerHTML='<div><strong>'+ts.length+'</strong><br><span>actividades elegidas</span></div><div>Uno por uno.<br>Todos podemos hacer algo.</div>';$('weekTasks').innerHTML=ts.length?'<div class="task-list">'+ts.map(card).join('')+'</div>':'<div class="empty"><strong>Aún no has elegido ninguna actividad.</strong><br><br>Explora el menú y pulsa “Elegir”.</div>';bind($('weekTasks'))}
+function randomIdea(quick=false){const pool=TASKS.filter(t=>t.difficulty<=2&&(!quick||t.minutes<=5)),p=pool[Math.floor(Math.random()*pool.length)];state.currentIdea=p;$('ideaTitle').textContent=p.title;$('ideaMeta').textContent=dl(p.difficulty)+' · '+ml(p.minutes)+' · '+cl(p.category);$('ideaAdd').textContent=state.selected.has(p.id)?'✓ Ya está en mi semana':'Lo haré esta semana';$('ideaDialog').showModal()}
+function shareWeek(){const ts=TASKS.filter(t=>state.selected.has(t.id));if(!ts.length)return;const text='Mi menú misional para esta semana:\n'+ts.map((t,i)=>(i+1)+'. '+t.title).join('\n')+'\n\nAmar · Compartir · Invitar · Acompañar';navigator.share?navigator.share({title:'Mi menú misional',text}).catch(()=>{}):navigator.clipboard.writeText(text).then(()=>alert('Lista copiada.'))}
+document.querySelectorAll('[data-home-action]').forEach(b=>b.onclick=()=>{const a=b.dataset.homeAction;a==='groups'?showChooser('groups'):a==='categories'?showChooser('categories'):randomIdea(a==='five')});
+document.querySelectorAll('.nav-item').forEach(b=>b.onclick=()=>b.dataset.view==='explore'?showChooser('groups'):setView(b.dataset.view));
+$('backButton').onclick=()=>state.group||state.category?showChooser(state.mode):setView('home');
+searchInput.oninput=e=>{state.search=e.target.value;render()};
+document.querySelectorAll('.group-chip').forEach(b=>b.onclick=()=>{state.secondaryGroup=b.dataset.groupFilter;document.querySelectorAll('.group-chip').forEach(x=>x.classList.toggle('active',x===b));render()});
+document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{state.difficulty=b.dataset.difficulty;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()});
+$('dialogClose').onclick=()=>$('ideaDialog').close();$('ideaAnother').onclick=()=>{$('ideaDialog').close();randomIdea(false)};$('ideaAdd').onclick=()=>{if(!state.currentIdea)return;state.selected.add(state.currentIdea.id);save();$('ideaAdd').textContent='✓ Ya está en mi semana'};
+$('shareWeek').onclick=shareWeek;$('clearWeek').onclick=()=>{if(state.selected.size&&confirm('¿Quieres borrar todas las actividades elegidas?')){state.selected.clear();save();week()}};
+save();if('serviceWorker'in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
