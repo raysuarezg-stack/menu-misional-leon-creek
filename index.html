@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#163a5f" />
+  <meta name="description" content="Menú misional del Barrio Leon Creek: ideas sencillas y prácticas para amar, compartir, invitar y acompañar." />
+  <title>Menú Misional | Barrio Leon Creek</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">BARRIO LEON CREEK</div>
+      <h1>Menú de Cómo Compartir el Evangelio</h1>
+      <p>Todos podemos hacer algo. Empieza donde estés.</p>
+      <div class="motto">AMAR · COMPARTIR · INVITAR · ACOMPAÑAR</div>
+    </div>
+  </header>
+
+  <main id="app" class="app-shell" aria-live="polite">
+    <section id="homeView" class="view active">
+      <div class="intro-card">
+        <h2>¿Qué puedo hacer esta semana?</h2>
+        <p>No tienes que hacerlo todo. Escoge una acción que puedas hacer con sinceridad y constancia.</p>
+      </div>
+
+      <div class="quick-grid">
+        <button class="quick-card" data-home-action="groups">
+          <span class="quick-icon">👥</span>
+          <span><strong>Buscar por persona</strong><small>Niños, jóvenes, mujeres, hombres y familias</small></span>
+        </button>
+        <button class="quick-card" data-home-action="categories">
+          <span class="quick-icon">🧭</span>
+          <span><strong>Buscar por actividad</strong><small>Orar, servir, compartir, invitar y más</small></span>
+        </button>
+        <button class="quick-card accent" data-home-action="today">
+          <span class="quick-icon">✨</span>
+          <span><strong>Dame una idea para hoy</strong><small>Una acción sencilla elegida al azar</small></span>
+        </button>
+        <button class="quick-card" data-home-action="five">
+          <span class="quick-icon">⏱️</span>
+          <span><strong>Tengo 5 minutos</strong><small>Ideas rápidas que puedo hacer ahora</small></span>
+        </button>
+      </div>
+
+      <section class="focus-card">
+        <div class="eyebrow dark">NUESTRO PLAN MISIONAL</div>
+        <h3>Traer almas a Cristo y participar en la recolección de Israel</h3>
+        <p>Nuestro enfoque como barrio es ayudar, uno por uno, a cinco grupos:</p>
+        <div class="focus-grid">
+          <div><span>🌱</span><strong>Investigadores</strong></div>
+          <div><span>🫂</span><strong>Nuevos conversos</strong></div>
+          <div><span>🏠</span><strong>Miembros que regresan</strong></div>
+          <div><span>💬</span><strong>Esfuerzos misionales de los miembros</strong></div>
+          <div><span>🤝</span><strong>Referencias</strong></div>
+        </div>
+      </section>
+
+      <section class="rhythm-card">
+        <h3>Una rutina misional sencilla</h3>
+        <div class="rhythm-grid">
+          <div><strong>Todos los días</strong><span>Orar · Observar · Amar</span></div>
+          <div><strong>Todas las semanas</strong><span>Contactar · Compartir · Invitar</span></div>
+          <div><strong>Todos los meses</strong><span>Servir · Acompañar · Ayudar</span></div>
+          <div><strong>Cada trimestre</strong><span>Invitar a alguien a venir y ver</span></div>
+        </div>
+      </section>
+
+      <section class="simple-path">
+        <h3>Si no sabes por dónde empezar</h3>
+        <ol>
+          <li><b>Ora.</b> Piensa en una persona.</li>
+          <li><b>Ámala.</b> Haz algo sincero por ella.</li>
+          <li><b>Comparte.</b> Permite que vea lo que el Evangelio significa para ti.</li>
+          <li><b>Invítala.</b> Dale una oportunidad de venir y ver.</li>
+          <li><b>Acompáñala.</b> Si acepta, no la dejes caminar sola.</li>
+        </ol>
+        <p class="love-note">Y si dice que no, <strong>síguela amando.</strong> La amistad no depende de aceptar una invitación.</p>
+      </section>
+    </section>
+
+    <section id="exploreView" class="view">
+      <div class="toolbar">
+        <button class="back-button" id="backButton" aria-label="Regresar">←</button>
+        <div>
+          <div class="eyebrow dark">EXPLORAR</div>
+          <h2 id="exploreTitle">Escoge una categoría</h2>
+        </div>
+      </div>
+      <div id="chooser"></div>
+      <div id="filterBar" class="filter-bar hidden">
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Buscar una idea…" autocomplete="off" />
+        </div>
+        <div id="groupFilter" class="difficulty-filter hidden" role="group" aria-label="Grupo">
+          <button class="group-chip active" data-group-filter="all">Todos</button>
+          <button class="group-chip" data-group-filter="ninos">Niños</button>
+          <button class="group-chip" data-group-filter="jovenes">Jóvenes</button>
+          <button class="group-chip" data-group-filter="mujeres">Mujeres</button>
+          <button class="group-chip" data-group-filter="hombres">Hombres</button>
+          <button class="group-chip" data-group-filter="familias">Familias</button>
+        </div>
+        <div class="difficulty-filter" role="group" aria-label="Dificultad">
+          <button class="chip active" data-difficulty="all">Todas</button>
+          <button class="chip" data-difficulty="1">Fácil</button>
+          <button class="chip" data-difficulty="2">Intermedio</button>
+          <button class="chip" data-difficulty="3">Más participación</button>
+        </div>
+      </div>
+      <div id="results"></div>
+    </section>
+
+    <section id="weekView" class="view">
+      <div class="toolbar">
+        <div>
+          <div class="eyebrow dark">MI SEMANA</div>
+          <h2>Mis compromisos</h2>
+        </div>
+      </div>
+      <div id="weekSummary" class="week-summary"></div>
+      <div id="weekTasks"></div>
+      <div class="week-actions">
+        <button id="shareWeek" class="primary-button">Compartir mi lista</button>
+        <button id="clearWeek" class="secondary-button">Limpiar selección</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegación principal">
+    <button class="nav-item active" data-view="home"><span>⌂</span><small>Inicio</small></button>
+    <button class="nav-item" data-view="explore"><span>⌕</span><small>Explorar</small></button>
+    <button class="nav-item" data-view="week"><span>✓</span><small>Mi semana</small><em id="weekCount">0</em></button>
+  </nav>
+
+  <dialog id="ideaDialog" class="idea-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Cerrar">×</button>
+    <div class="idea-spark">✨</div>
+    <div class="eyebrow dark">IDEA PARA HOY</div>
+    <h2 id="ideaTitle"></h2>
+    <p id="ideaMeta" class="idea-meta"></p>
+    <div class="dialog-actions">
+      <button id="ideaAdd" class="primary-button">Lo haré esta semana</button>
+      <button id="ideaAnother" class="secondary-button">Dame otra idea</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
